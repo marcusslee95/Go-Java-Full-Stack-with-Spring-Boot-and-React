@@ -1,0 +1,4 @@
+- React App created using create-react-app
+- Added Bootstrap for styling
+- Used JS's sessionStorage to send over token when user logs-in & delete token when user logs-out
+- Will start w/DB used in course - h2 in-memory db - before moving onto PostgreSQL version 
