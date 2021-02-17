@@ -15,9 +15,9 @@ public class ClassThatInteractsWithDBOnBehalfOfUserObjects {
 	@PersistenceContext //"all the objects I manage via entityManager I'll keep track of in this thing so that if values of those objects change entityManager will automatically know"
 	EntityManager entityManager; //thing in charge of interactions w/db
 	
-	public User insert(User user){
+	public long insert(User user){
 		entityManager.persist(user); //this would store object into db
-		return user; //I don't think this is necessary. might just be convention where we return thing we stored
+		return user.getId(); //I don't think this is necessary. might just be convention where we return thing we stored
 	}
 	
 }
