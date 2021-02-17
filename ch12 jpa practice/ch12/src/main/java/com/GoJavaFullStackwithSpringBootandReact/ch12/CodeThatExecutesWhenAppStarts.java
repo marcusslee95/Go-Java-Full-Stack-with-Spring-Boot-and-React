@@ -25,12 +25,8 @@ public class CodeThatExecutesWhenAppStarts implements CommandLineRunner {//Comma
 		User user = new User("Jack", "admin");
 //		instanceOfClassThatInteractsWithDBOnBehalfOfUserObjects.insert(user);
 		long idOfStoredUser = instanceOfClassThatInteractsWithDBOnBehalfOfUserObjects.insert(user);
-		User user2 = new User("Jill", "master");
-		long idOfStoredUser2 = instanceOfClassThatInteractsWithDBOnBehalfOfUserObjects.insert(user2);
 		//New User is stored in db : User [id=1, name=Jack, role=admin]
 		log.info("New User is stored in db : " + user);
-//		New User is stored in db : User [id=2, name=Jill, role=master]
-		log.info("New User is stored in db : " + user2);
 	}
 	
 
