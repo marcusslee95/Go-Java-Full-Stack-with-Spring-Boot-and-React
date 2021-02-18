@@ -5,12 +5,14 @@ class ToDosRequestSender {
 
     //"/users/{username}/todos"
     toGetAllTodosEndpoint(username){
-        return axios.get(`http://localhost:8080/users/${username}/todos`)
+        // return axios.get(`http://localhost:8080/users/${username}/todos`)
+        return axios.get(`http://localhost:8080/jpa/users/${username}/todos`)
     }
 
     //"/users/{username}/todos"
     toGetATodoEndpoint(username, id){
-        return axios.get(`http://localhost:8080/users/${username}/todos/${id}`)
+        // return axios.get(`http://localhost:8080/users/${username}/todos/${id}`)
+        return axios.get(`http://localhost:8080/jpa/users/${username}/todos/${id}`)
     }
 
 
