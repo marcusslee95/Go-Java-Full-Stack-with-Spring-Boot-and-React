@@ -17,6 +17,10 @@ public class Todo {
 	private boolean isCompleted;
 	private Date targetDate;
 	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
