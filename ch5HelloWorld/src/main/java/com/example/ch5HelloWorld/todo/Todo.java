@@ -2,7 +2,15 @@ package com.example.ch5HelloWorld.todo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity //Imma store objects of this type into db
 public class Todo {
+	
+	@Id //this is going to be primary key of a record
+	@GeneratedValue //and I'm not setting it. Spring you are!
 	private int id;
 	private String username;
 	private String description;
