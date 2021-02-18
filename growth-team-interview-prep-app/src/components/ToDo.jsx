@@ -34,8 +34,13 @@ class ToDo extends Component{
     }
     
     componentDidMount(){// used for populating initial values in form fields
-        if (this.state.id===-1) return //no need to try to fetch existing record from backend if know we want to create new ToDo
-        
+        // console.log(this.state.id)
+        // console.log(typeof this.state.id); 
+
+        if (this.state.id === "-1") { //no need to try to fetch existing record from backend if know we want to create new ToDo
+            console.log(this.state.id)
+            return 
+        }
         const username = AuthenticationService.getTokenOfLoggedInUser()
         ToDosRequestSender.toGetATodoEndpoint(username, this.state.id)
             .then(response => 
