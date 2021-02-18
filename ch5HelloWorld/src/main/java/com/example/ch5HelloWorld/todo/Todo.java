@@ -21,6 +21,8 @@ public class Todo {
 		this.id = id;
 	}
 
+	public Todo() {}
+	
 	public Todo(int id, String username, String description, boolean isCompleted, Date targetDate) {
 		super();
 		this.id = id;
