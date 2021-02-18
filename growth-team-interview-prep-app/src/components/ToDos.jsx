@@ -23,7 +23,7 @@ class ToDos extends Component{
 
     getTodosAndChangeUIAfterwards(){
       const username = AuthenticationService.getTokenOfLoggedInUser()
-      ToDosRequestSender.toGetAllTodosEndpoint(username)
+      ToDosRequestSender.toGetAllTodosOfASpecificUserEndpoint(username)
         .then(response => {
           // console.log(response)
           this.setState({todos: response.data})

@@ -24,7 +24,7 @@ public class ToDosControllerThatAccessesDB {
 	private InterfaceThatInteractsWithData instanceOfInterfaceThatInteractsWithData;
 	
 	@GetMapping("jpa/users/{username}/todos")
-	public List<Todo> getAllTodos(@PathVariable String username) {
+	public List<Todo> getAllTodosOfASpecificUser(@PathVariable String username) {
 		return instanceOfInterfaceThatInteractsWithData.findByUsername(username);
 //		return instanceOfDataInteractingClass.findAll();
 	}
@@ -49,8 +49,8 @@ public class ToDosControllerThatAccessesDB {
 		
 		todo.setUsername(username); //honestly trivial.... just something for people that aren't using UI and just sending requests directly to this web service. in which case we'd want to set username property as whatever they sent in url... as opposed to username value in Todo.... 
 		
-		Todo updatedTodo = instanceOfInterfaceThatInteractsWithData.save(todo); //JPARepository save method 
-		return new ResponseEntity<Todo>(updatedTodo, HttpStatus.OK);
+		Todo updatedOrIfNoMatchNewlyCreatedTodo = instanceOfInterfaceThatInteractsWithData.save(todo); //JPARepository save method 
+		return new ResponseEntity<Todo>(updatedOrIfNoMatchNewlyCreatedTodo, HttpStatus.OK);
 	}
 	
 	@PostMapping("jpa/users/{username}/todos") //the way I read this url is we're adding a new todo to the the many todos - which this url refers to. Also doesn't make sense to do /todos/{id} cuz that resource does not exist yet
@@ -60,12 +60,12 @@ public class ToDosControllerThatAccessesDB {
 			) {
 		
 		todo.setUsername(username);
-		Todo createdTodo = instanceOfInterfaceThatInteractsWithData.save(todo);
+		Todo newlyCreatedTodoHopefullySomeoneDidntSendInTodoWithSameId = instanceOfInterfaceThatInteractsWithData.save(todo);
 		
 		//Location of the new Todo we just created -> because that's what we normally send back in response to post request
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}")
-				.buildAndExpand(createdTodo.getId())
+				.buildAndExpand(newlyCreatedTodoHopefullySomeoneDidntSendInTodoWithSameId.getId())
 				.toUri();
 		return ResponseEntity.created(uri).build();
 	}

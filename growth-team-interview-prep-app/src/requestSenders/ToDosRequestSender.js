@@ -4,7 +4,7 @@ import axios from 'axios'
 class ToDosRequestSender {
 
     //"/users/{username}/todos"
-    toGetAllTodosEndpoint(username){
+    toGetAllTodosOfASpecificUserEndpoint(username){
         // return axios.get(`http://localhost:8080/users/${username}/todos`)
         return axios.get(`http://localhost:8080/jpa/users/${username}/todos`)
     }

@@ -1,8 +1,8 @@
 insert into todo(id, username, description,is_completed, target_date)
-values (1, 'M', 'Plan VV Date', false, sysdate());
+values (10001, 'M', 'Plan VV Date', false, sysdate());
 
 insert into todo(id, username, description,is_completed, target_date)
-values (2, 'M', 'Prep for Interview', false, sysdate());
+values (10002, 'M', 'Prep for Interview', false, sysdate());
 
 insert into todo(id, username, description,is_completed, target_date)
-values (3, 'M', 'Clean room', false, sysdate());
+values (10003, 'M', 'Clean room', false, sysdate());
