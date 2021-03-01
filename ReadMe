@@ -5,3 +5,7 @@ In "github-repo-for-growth-team-interview-prep-app" I have code for an earlier v
 - Added Bootstrap for styling
 - Used JS's sessionStorage to send over token when user logs-in & delete token when user logs-out
 - Will start w/DB used in course - h2 in-memory db - before moving onto PostgreSQL version actually created the PostgreSQL version in another GitHub repo called "Connecting-A-Java-API-to-PostgreSQL-DB-practice"
+
+-----
+
+So this repo is essentially 1. updated version of the app in "github-repo-for-growth-team-interview-prep-app" (version that uses h2) 2. work i did in later sections (sections after ch 6) - like using JPA to interact w/a db
